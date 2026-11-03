@@ -37,7 +37,35 @@ const plansData = [
 ];
 
 function App() {
-  return;
+  return (
+    <>
+      <div className="min-h-screen flex flex-col font-sans bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <Navbar />
+        <Hero />
+
+        <main
+          id="pricing-grid"
+          className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full"
+        >
+          {/* Responsive layout grid (1 column mobile, 3 columns desktop) */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-md mx-auto lg:max-w-none">
+            {/* Looping to generate data from fixed data to ensure reusability */}
+            {plansData.map((plan, index) => (
+              <PricingCard
+                key={index}
+                name={plan.name}
+                price={plan.price}
+                features={plan.features}
+                highlighted={plan.highlighted}
+              />
+            ))}
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default App;
