@@ -14,7 +14,7 @@ export default function PricingCard({ name, price, features, highlighted }) {
         <h3 className="text-xl font-bold tracking-tight mb-2">{name}</h3>
         <div className="flex items-baseline gap-1">
           <span className="text-4xl font-extrabold tracking-tight">
-            {price}
+            &#8358;{price}
           </span>
           <span
             className={`text-sm ${highlighted ? "text-teal-100" : "text-gray-500 dark:text-gray-400"}`}
